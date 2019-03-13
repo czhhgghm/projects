@@ -1,0 +1,215 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+#czhpage {
+
+}
+
+.section {
+    overflow: hidden;
+}
+
+/* 第一屏样式 */
+.first {
+    padding-top: 80px;
+}
+
+/* 插件会为所有内容添加一个父容器 */
+.first .logo {
+    background: url("../image/logo.png");
+    height: 186px;
+    width: 251px;
+    margin: 0 auto;
+}
+
+.first .text {
+    width: 100%;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.first .text > img {
+    margin: 0 40px;
+    opacity: 0.1;
+    transition: margin 1s,opacity 1s;
+    
+}
+
+.first.current .text > img {
+    margin: 0 5px;
+    opacity: 1;
+}
+
+.first .intro {
+    background: url("../image/info_1.png");
+    width: 772px;
+    height: 49px;
+    margin: 40px auto;
+}
+
+/* 第二屏样式 */
+.second > div {
+    display: flex;
+    /* 设置主轴方向上的排列方式 */
+    justify-content: space-around;
+    /* 设置侧轴方向上的排列方式 */
+    align-items: center;
+}
+
+.second .shield {
+    width: 440px;
+    font-size: 0;
+}
+
+.second .shield > img {
+    transition: transform .5s;
+}
+
+.second .shield > img:nth-of-type(1){
+    transform: translate(100px,100px) rotate(30deg);
+}
+.second .shield > img:nth-of-type(2){
+    transform: translate(-100px,-100px) rotate(-30deg);
+}
+.second .shield > img:nth-of-type(3){
+    transform: translate(200px,200px) rotate(60deg);
+}
+.second .shield > img:nth-of-type(4){
+    transform: translate(-200px,-200px) rotate(-60deg);
+}
+.second .shield > img:nth-of-type(5){
+    transform: translate(150px,150px) rotate(90deg);
+}
+.second .shield > img:nth-of-type(6){
+    transform: translate(50px,150px) rotate(-90deg);
+}
+.second .shield > img:nth-of-type(7){
+    transform: translate(-150px,-150px) rotate(60deg);
+}
+.second .shield > img:nth-of-type(8){
+    transform: translate(10px,-250px) rotate(-90deg);
+}
+.second .shield > img:nth-of-type(9){
+    transform: translate(-250px,10px) rotate(45deg);
+}
+
+.second .info {
+    height: 309px;
+    width: 635px;
+    background: url("../image/info_2.png");
+}
+
+.second.current .shield > img {
+    transform: none;
+
+}
+
+/* 第三屏样式 */
+.third {
+    position: relative;
+}
+
+.third .info {
+    height: 278px;
+    width: 631px;
+    background: url("../image/info_3.png");
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-110%,-50%);
+}
+
+.third .circle {
+    background: url("../image/circle.png");
+    height: 449px;
+    width: 453px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(110%,-50%);
+}
+
+.third .circle > .rocket {
+    background: url("../image/rocket.png");
+    height: 204px;
+    width: 203px;
+    position: absolute;
+    left: -600px;
+    top: 650px;
+    /* 添加过渡 */
+    transition: left 1s,top 1s;
+}
+
+.third.current .circle > .rocket {
+    left: 125px;
+    top: 125px;
+}
+
+.fourth {
+    position: relative;
+}
+
+.fourth .search {
+    width: 529px;
+    height: 438px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-110%,-50%);
+    overflow: hidden;
+}
+
+.fourth .search > .searchBar {
+    width: 529px;
+    height: 66px;
+    background: url("../image/search.png");
+    transform: translateX(-100%);
+}
+
+.fourth .search > .searchText {
+    background: url("../image/key.png");
+    /* 开始时宽度为0 ===> 99px  的过程中分5步实现 */
+    width: 0px;
+    height: 22px;
+    position: absolute;
+    top: 23px;
+    left: 15px;
+}
+
+.fourth .search > .searchResult {
+    width: 529px;
+    height: 0px;
+    background: url("../image/result.png");
+    margin-top:-12px;
+}
+
+.fourth .info {
+    background: url("../image/info_4.png");
+    width: 612px;
+    height: 299px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(110%,-50%);
+}
+
+/* 过渡效果实现 */
+.fourth.current .search > .searchBar {
+    transform: translateX(0%);
+    transition: transform 1s;
+}
+
+.fourth.current .search > .searchText{
+    width: 99px;
+    /* 记得加上1s延迟 */
+    transition: width 1s 1s steps(5);
+}
+
+.fourth.current .search > .searchResult{
+    height: 372px;
+    transition: height 1s 2s;
+}
+
+
