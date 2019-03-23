@@ -1,0 +1,99 @@
+/* 
+    约定:
+    1. 样式通过 id 限定
+    2. 尽可能多使用子代选择器
+
+
+*/
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+/* 字体图标部分 */
+
+@font-face {
+    font-family: 'hgg';
+    src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'), url('../font/MiFie-Web-Font.svg') format('svg'), url('../font/MiFie-Web-Font.ttf') format('truetype'), url('../font/MiFie-Web-Font.woff') format('woff');
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: hgg;
+    font-style: normal;
+}
+
+.icon-mobilephone::before {
+    content: "\e908";
+    font-size: 13px;
+}
+
+.icon-telephone::before {
+    content: "\e909";
+    font-size: 15px;
+}
+
+.icon-logo::before {
+    content: "\e93e";
+}
+
+.icon-icon::before {
+    content: "\e920";
+}
+
+/* 头部区域 */
+
+#header {
+    height: 200px;
+    background-color: #f0f0f0;
+}
+
+#header>.topbar {
+    height: 40px;
+    border-bottom: 1px solid #c0c0c0;
+    line-height: 40px;
+}
+
+#header .mobile-link {
+    font-size: 12px;
+    color: #888;
+}
+
+#header .mobile-link > img {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+}
+
+#header .mobile-link:hover {
+    text-decoration: none;
+}
+
+#header .mobile-link:hover > img {
+    display: block;    
+}
+
+/* #header > .topbar > .container {
+    background-color: #f40;
+    height: 100%;
+} */
+
+/* 测试样式 */
+
+section {
+    height: 100px;
+    background-color: #fff;
+}
+
+/* 选中第奇数个 */
+
+section:nth-of-type(2n) {
+    background-color: #f5f5f5;
+}
+
+/* 脚注区域 */
+
+#footer {
+    height: 200px;
+}
